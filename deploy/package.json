@@ -1,0 +1,18 @@
+{
+  "name": "deploy",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=25.0.0"
+  },
+  "scripts": {
+    "upload": "node --import tsx/esm cloudinaryHelper.ts upload",
+    "replace": "node --import tsx/esm cloudinaryHelper.ts replace",
+    "list": "node --import tsx/esm cloudinaryHelper.ts list",
+    "config:check": "node --import tsx/esm cloudinaryConfig.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3"
+  }
+}

@@ -1,0 +1,9 @@
+# Logs
+*.log
+npm-debug.log*
+
+node_modules
+dist
+
+# Auto-generated build metadata
+src/app-info.ts

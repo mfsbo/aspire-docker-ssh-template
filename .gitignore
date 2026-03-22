@@ -6,6 +6,13 @@
 # dotenv files
 .env
 
+# Auto-generated build metadata — do not commit
+frontend/src/app-info.ts
+vue-app/src/app-info.ts
+
+# Cloudinary credentials — never commit
+deploy/cloudinary.config.json
+
 # User-specific files
 *.rsuser
 *.suo

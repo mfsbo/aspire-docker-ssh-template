@@ -15,10 +15,15 @@ builder.AddDockerComposeEnvironment("dcenv")
 
 // Build your application here
 var vite = builder.AddViteApp("app", "frontend");
+// Second Vue app — served at /vue-app/ in production
+var vueApp = builder.AddViteApp("vue-app", "vue-app");
 
 // Configure YARP to serve the static files and handle routing
 if (builder.ExecutionContext.IsPublishMode)
 {
+    // The Astro frontend is the primary app served at the root.
+    // The Vue app static files are deployed to the /vue-app/ sub-folder via
+    // the Cloudinary / SSH deploy pipeline described in deploy/cloudinaryHelper.ts.
     var yarp = builder.AddYarp("site")
            .PublishWithStaticFiles(vite);
 

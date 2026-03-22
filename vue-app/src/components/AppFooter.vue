@@ -1,0 +1,46 @@
+<script setup lang="ts">
+import APP_INFO from '../app-info'
+
+const year = new Date(APP_INFO.buildTime).getFullYear()
+const buildDate = new Date(APP_INFO.buildTime).toLocaleString('en-GB', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZoneName: 'short',
+})
+</script>
+
+<template>
+  <footer class="app-footer">
+    <span>{{ APP_INFO.appName }} &nbsp;v{{ APP_INFO.version }}</span>
+    <span class="separator">|</span>
+    <span>Built {{ buildDate }}</span>
+    <span class="separator">|</span>
+    <span>© {{ year }}</span>
+  </footer>
+</template>
+
+<style scoped>
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(15, 15, 26, 0.9);
+  border-top: 1px solid rgba(81, 43, 212, 0.3);
+  font-size: 0.75rem;
+  color: #a0a0b0;
+  backdrop-filter: blur(6px);
+}
+
+.separator {
+  opacity: 0.4;
+}
+</style>

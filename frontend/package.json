@@ -2,13 +2,21 @@
   "name": "frontend",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=25.0.0"
+  },
   "scripts": {
-    "dev": "astro dev",
+    "generate:app-info": "tsx scripts/appMetadataGenerator.ts",
+    "prebuild": "npm run generate:app-info",
+    "dev": "npm run generate:app-info && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^5.16.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
   }
 }

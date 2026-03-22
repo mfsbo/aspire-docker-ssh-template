@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# Auto-generated build metadata — do not commit
+src/app-info.ts
+
 # dependencies
 node_modules/
 

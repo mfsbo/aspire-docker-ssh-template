@@ -16,9 +16,19 @@ const pkg = JSON.parse(readFileSync(resolve(__dirname, 'package.json'), 'utf-8')
  * To add a new library module, create src/{ModuleName}/index.ts and add an entry below.
  */
 export default defineConfig({
+  resolve: {
+    alias: {
+      // @shared/* resolves to src/* — used by test files and any internal cross-module imports.
+      // Mirrors the per-app alias that maps @aspire-template/shared-utils/* → ../shared/src/*.
+      '@shared': resolve(__dirname, 'src'),
+    },
+  },
   test: {
     include: ['Tests/**/*.test.ts'],
     environment: 'node',
+    typecheck: {
+      tsconfig: './tsconfig.test.json',
+    },
   },
   build: {
     lib: {

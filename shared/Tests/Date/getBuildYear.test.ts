@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getBuildYear } from '../../src/Date/getBuildYear'
+import { getBuildYear } from '@shared/Date/getBuildYear'
 
 describe('getBuildYear', () => {
   it('extracts the UTC year from a date', () => {

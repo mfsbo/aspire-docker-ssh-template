@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatBuildDate } from '../../src/Date/formatBuildDate'
+import { formatBuildDate } from '@shared/Date/formatBuildDate'
 
 describe('formatBuildDate', () => {
   it('formats a known UTC date in the expected format', () => {

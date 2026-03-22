@@ -1,0 +1,25 @@
+{
+  "name": "@aspire-template/shared-utils",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Shared utility libraries for the Aspire Docker SSH Template",
+  "engines": {
+    "node": ">=25.0.0"
+  },
+  "exports": {
+    "./Date": "./src/Date/index.ts",
+    "./cloudinary": "./src/cloudinary/index.ts"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "dev": "vite build --watch"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^8.0.1",
+    "vitest": "^4.1.0"
+  }
+}

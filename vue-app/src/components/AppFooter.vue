@@ -1,15 +1,9 @@
 <script setup lang="ts">
+import { formatBuildDate, getBuildYear } from '@aspire-template/shared-utils/Date'
 import APP_INFO from '../app-info'
 
-const year = new Date(APP_INFO.buildTime).getFullYear()
-const buildDate = new Date(APP_INFO.buildTime).toLocaleString('en-GB', {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit',
-  timeZoneName: 'short',
-})
+const buildDate = formatBuildDate(new Date(APP_INFO.buildTime))
+const year = getBuildYear(new Date(APP_INFO.buildTime))
 </script>
 
 <template>
